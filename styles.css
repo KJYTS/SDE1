@@ -100,7 +100,7 @@ dialog { max-height: calc(100svh - 32px); overflow-y: auto; }
 
 /* Music map landing screen. */
 a.payment-button { display: flex; justify-content: center; align-items: center; text-decoration: none; }
-.map-phone { display: flex; flex-direction: column; padding-top: 12.7cqw; }
+.map-phone { display: flex; flex-direction: column; padding-top: min(12.7vw, 58.42px); }
 .map-brand { color: #553dff; text-align: center; font-size: 5.4cqw; font-weight: 800; line-height: 1.2; letter-spacing: -.12cqw; margin: 0 0 3.5cqw; }
 .map-brand > span { color: #eeeaff; display: inline-block; width: 0; transform: translate(-1.5cqw,-1.5cqw); }
 .map-search { display: flex; align-items: center; gap: 3.5cqw; background: #fbfaff; border-radius: 2.6cqw; margin: 0 5%; padding: 3.5cqw 5.5cqw; min-height: 16cqw; }
@@ -184,3 +184,26 @@ a.payment-button { display: flex; justify-content: center; align-items: center; 
 .han-release { width: 100%; min-height: 44px; padding: 2.8cqw 1cqw; border: 0; border-radius: 2cqw; color: #fff; background: #8973ff; font-size: 4cqw; }
 .han-card button:disabled { cursor: default; }
 #han-name:focus { outline: none; }
+
+/* Cards and map share a continuously moving camera during a swipe. */
+.map-world { position: absolute; inset: 0; }
+.artist-cards[hidden] { display: none; }
+.artist-cards { display: flex; flex: 0 0 auto; gap: 3cqw; width: 100%; padding: 0 8cqw 1.7cqw; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 8cqw; scrollbar-width: none; touch-action: pan-x pan-y; cursor: grab; }
+.artist-cards::-webkit-scrollbar { display: none; }
+.artist-cards.dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+.artist-cards .han-card { flex: 0 0 84cqw; width: 84cqw; margin: 0; scroll-snap-align: center; scroll-snap-stop: always; }
+.artist-cards img { -webkit-user-drag: none; user-select: none; }
+.han-card-photo { object-fit: cover; }
+.luna-card .han-stats svg { fill: none; }
+.luna-card .han-release { background: #c9c0ff; color: #9380ff; }
+.han-selected .map-world { transform: translate(calc(-30cqw * var(--map-progress, 0)), calc(-36cqw * var(--map-progress, 0))); will-change: transform; }
+.han-selected .map-edge { display: flex; left: 71%; top: calc(50% + 36cqw); color: #292929; }
+.han-selected .map-edge > span:first-child { border-color: #d9d9d9; }
+.han-selected .rings::after { background: repeating-radial-gradient(ellipse 73cqw 82cqw at calc(28% - 30cqw * var(--map-progress, 0)) calc(38% - 36cqw * var(--map-progress, 0)), transparent 0%, #e3fcff8a 13%, #dcffff9c 19%, transparent 22%, transparent 30%); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .han-selected .map-world { will-change: auto; }
+}
+
+.artist-cards:focus { outline: none; }
+.artist-cards:focus-visible { outline: 2px solid #9380ff; outline-offset: -2px; }

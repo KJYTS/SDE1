@@ -100,8 +100,11 @@ carousel.addEventListener('keydown', (event) => {
 });
 // Touch uses native scrolling; pointer dragging adds the same gesture for a mouse.
 let drag = null;
+let suppressCardClick = false;
 carousel.addEventListener('pointerdown', (event) => {
-  if (event.pointerType !== 'mouse' || event.button !== 0 || event.target.closest('button, a')) return;
+  if (event.pointerType !== 'mouse' || event.button !== 0) return;
+  if (event.target.closest('button, a') && !event.target.closest('.luna-profile-link')) return;
+  suppressCardClick = false;
   drag = { id: event.pointerId, x: event.clientX, left: carousel.scrollLeft, moved: false };
 });
 carousel.addEventListener('pointermove', (event) => {
@@ -125,12 +128,20 @@ function finishDrag(event) {
   carousel.classList.remove('dragging');
   if (carousel.hasPointerCapture(event.pointerId)) carousel.releasePointerCapture(event.pointerId);
   if (moved) {
+    suppressCardClick = true;
     const index = Math.abs(delta) > cardStep() * .15 ? (delta < 0 ? 1 : 0) : start;
     moveToCard(index);
     clearTimeout(settleTimer);
     settleTimer = setTimeout(settleCard, 500);
   }
 }
+carousel.addEventListener('click', (event) => {
+  if (!suppressCardClick) return;
+  event.preventDefault();
+  event.stopPropagation();
+  suppressCardClick = false;
+}, true);
+carousel.addEventListener('dragstart', (event) => event.preventDefault());
 carousel.addEventListener('pointerup', finishDrag);
 carousel.addEventListener('pointercancel', finishDrag);
 window.addEventListener('pointerup', finishDrag);

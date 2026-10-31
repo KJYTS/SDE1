@@ -27,13 +27,10 @@
       </ul>
       <div class="plan-price"><del>월 59,900</del><strong>월 39,900원</strong></div>
     </div>
-    <button class="payment-button" type="button" id="payment">결제하기</button>
+    <a class="payment-button" id="payment" href="music-map.html">결제하기</a>
   </section>
-  <dialog id="payment-notice" aria-labelledby="payment-notice-title"><h2 id="payment-notice-title">결제 안내</h2><p>결제 서비스는 아직 연결되지 않았습니다.</p><form method="dialog"><button>닫기</button></form></dialog>
   <div class="home-indicator" aria-hidden="true"></div>
 </main>
-<script>
- document.querySelector('#payment').addEventListener('click', () => document.querySelector('#payment-notice').showModal());
-</script>
+
 </body>
 </html>

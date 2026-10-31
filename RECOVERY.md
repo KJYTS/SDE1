@@ -34,7 +34,10 @@ server in your own browser.
 
 - Artist has no destination screen yet.
 - Listener Next changes to purple after selection but has no destination yet.
-- Buyer payment opens an informational dialog; no actual payment is performed.
+- Buyer payment now opens `music-map.html`; no actual payment is performed.
+- `music-map.html` and `music-map.js` provide a sample music map with search,
+  filter controls and artist/song notices. Profile/album artwork is placeholder
+  inline SVG/CSS; other bottom navigation destinations are not implemented.
 - Designs are approximated from screenshots, as authorized in the conversation.
 
 ## Recovery validation

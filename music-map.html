@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ddd7ff">
   <title>INDIETOWN — 음악지도</title>
-  <link rel="stylesheet" href="styles.css?v=blue-album-1">
-  <script src="music-map.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=han-card-1">
+  <script src="music-map.js?v=han-card-1" defer></script>
 </head>
 <body>
 <main class="phone map-phone" aria-label="인디타운 음악지도">
@@ -52,12 +52,21 @@
     <g fill="#e4dcff"><path d="M302 185v8q-5-2-5 2c0 4 6 2 5-1v-7h4v-2zM128 365v8q-5-2-5 2c0 4 6 2 5-1v-7h4v-2z"/></g>
     <circle cx="53" cy="311" r="3.5" fill="#fff"/>
   </svg><span>나</span></div>
-    <button class="map-node artist-han" type="button" data-search="한로로" data-kind="artist"><span class="artist-avatar avatar-han" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#fff"/><path d="m14 31 53-4 17 15-13 11 19 11-20 13-52-5 3-21-9-3z" stroke="#222" stroke-width="2" fill="none"/><text x="19" y="47" font-size="19" font-style="italic" font-family="Arial" font-weight="bold">HAN</text><text x="27" y="66" font-size="18" font-style="italic" font-family="Arial" font-weight="bold">RORO</text></svg></span><span class="artist-crown" aria-label="추천 아티스트">♛</span><span>한로로</span></button>
+    <div class="map-node artist-han" data-search="한로로" data-kind="artist"><button class="han-open" type="button" aria-label="한로로 아티스트 카드 열기" aria-expanded="false" aria-controls="han-card"><span class="artist-avatar avatar-han" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#fff"/><path d="m14 31 53-4 17 15-13 11 19 11-20 13-52-5 3-21-9-3z" stroke="#222" stroke-width="2" fill="none"/><text x="19" y="47" font-size="19" font-style="italic" font-family="Arial" font-weight="bold">HAN</text><text x="27" y="66" font-size="18" font-style="italic" font-family="Arial" font-weight="bold">RORO</text></svg></span><span class="artist-crown" aria-hidden="true">♛</span></button><span>한로로</span></div>
     <button class="map-node song-drowning" type="button" data-search="Drowning" data-kind="song"><span class="music-orb" aria-hidden="true">♪</span><span>Drowning</span></button>
     <div class="map-edge" aria-hidden="true"><span><img src="blue-album.jpg" alt=""></span><span>김…</span></div>
     <span class="map-note note-one" aria-hidden="true">♪</span><span class="map-note note-two" aria-hidden="true">♪</span><span class="map-note note-three" aria-hidden="true">♪</span><span class="map-note note-four" aria-hidden="true">♪</span><span class="map-note note-five" aria-hidden="true">♪</span>
     <p class="map-empty" hidden>검색 결과가 없습니다.</p>
     <span class="map-handle" aria-hidden="true"></span>
+  </section>
+  <section class="han-card" id="han-card" aria-labelledby="han-name" hidden>
+    <div class="han-card-header">
+      <svg class="han-card-photo" viewBox="0 0 120 120" role="img" aria-label="한로로 프로필 대체 그래픽"><rect width="120" height="120" fill="#d1dfdb"/><path d="M0 25h120M0 70h120M25 0v90M90 0v90" stroke="#7e9a96" stroke-width="4"/><path d="M20 120V45c0-47 75-47 75 0v75" fill="#202329"/><ellipse cx="58" cy="47" rx="23" ry="28" fill="#e7ccbb"/><path d="m34 36 4-24 41 1 6 27-17-11-9 7-9-9z" fill="#202329"/><path d="m17 120 15-43 25 9 26-9 20 43" fill="#fbfaff"/><path d="m41 81 16 14 15-14 6 39H36z" fill="#333b41"/></svg>
+      <div class="han-card-info"><p>팬이 된 지 <span>520일 째</span></p><h2 id="han-name" tabindex="-1">한로로</h2><div class="han-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M2 21v-3c0-7 14-7 14 0v3m0-18q7 0 5 8m-2 3q4 1 4 7"/></svg>2,657</span><span class="han-likes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 3 12C-5 3 8-3 12 5 16-3 29 3 21 12z"/></svg>56,684</span></div></div>
+      <button class="han-profile-next" type="button" disabled aria-label="한로로 상세 프로필 준비 중"><svg viewBox="0 0 24 40" aria-hidden="true"><path d="m4 4 16 16L4 36"/></svg></button>
+    </div>
+    <p class="han-lyrics">남기지 못해 멍든 겨울을 난 안을래요<br>맞이하는 사랑 없어도<br>텅 빈 이곳은 따뜻하네요</p>
+    <button class="han-release" type="button" disabled>신규 음원이 발매되었어요</button>
   </section>
   <nav class="map-bottom" aria-label="주 메뉴">
     <a href="music-map.html" aria-current="page"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M24 3C4 3 0 26 24 46 48 26 44 3 24 3m0 9a9 9 0 1 1 0 18 9 9 0 0 1 0-18" fill-rule="evenodd"/></svg><span>음악지도</span></a>

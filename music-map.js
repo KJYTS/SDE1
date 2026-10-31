@@ -21,7 +21,29 @@ filters.forEach((button, index) => button.addEventListener('click', () => {
   filters.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
   filterMap();
 }));
-nodes.forEach((node) => node.addEventListener('click', () => {
-  document.querySelector('#map-detail-title').textContent = node.dataset.search;
-  document.querySelector('#map-detail').showModal();
-}));
+nodes.forEach((node) => {
+  if (node.classList.contains('artist-han')) return;
+  node.addEventListener('click', () => {
+    document.querySelector('#map-detail-title').textContent = node.dataset.search;
+    document.querySelector('#map-detail').showModal();
+  });
+});
+const hanButton = document.querySelector('.han-open');
+const hanCard = document.querySelector('#han-card');
+function syncArtistCard() {
+  const open = window.location.hash === '#hanroro';
+  document.querySelector('.map-phone').classList.toggle('han-selected', open);
+  hanCard.hidden = !open;
+  hanButton.setAttribute('aria-expanded', String(open));
+  if (open) document.querySelector('#han-name').focus({ preventScroll: true });
+}
+hanButton.addEventListener('click', () => {
+  if (window.location.hash === '#hanroro') {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+    syncArtistCard();
+  } else {
+    window.location.hash = 'hanroro';
+  }
+});
+window.addEventListener('hashchange', syncArtistCard);
+syncArtistCard();

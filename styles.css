@@ -299,3 +299,24 @@ a.payment-button { display: flex; justify-content: center; align-items: center; 
 
 /* Decorative glimpse beyond the last artist, without adding a third card. */
 .artist-card-peek { flex: 0 0 5cqw; align-self: stretch; background: #fff; border-radius: 5.1cqw 0 0 5.1cqw; pointer-events: none; }
+
+/* Music courses share the map header and persistent main navigation. */
+.course-phone { padding-bottom: 0; }
+.course-phone .rings::after { background-position: 0 -15cqw; }
+.course-sheet { position: relative; flex: 1; margin-top: 5cqw; min-height: 125cqw; padding: 23.7cqw 0 max(32cqw, 150px); border-radius: 5.1cqw 5.1cqw 0 0; background: #f9f9f9; box-shadow: 0 -3cqw 5cqw #30295730; }
+.course-handle { position: absolute; top: 4.4cqw; left: 42.7%; width: 13.7%; height: 1cqw; border-radius: 999px; background: #aaa; }
+.course-tabs { display: flex; align-items: center; justify-content: center; gap: 3.7cqw; margin: 0 6% 8.5cqw; }
+.course-tabs button { flex: 1; padding: 2.2cqw 1.2cqw; min-height: 44px; border: .25cqw solid #6548ff; border-radius: 999px; background: #fbfaff; color: #292929; font-size: 4cqw; line-height: 1.4; white-space: nowrap; }
+.course-tabs [aria-selected="true"] { color: white; background: #553dff; border-color: #553dff; }
+.course-row { display: flex; align-items: center; gap: 5cqw; padding: 7.6cqw 4.2cqw; border-top: 1px solid #d9d9d9; }
+.course-row:last-of-type { border-bottom: 1px solid #d9d9d9; }
+.course-row[hidden], .course-empty[hidden] { display: none; }
+.course-cover { display: grid; place-items: center; width: 16cqw; height: 16cqw; flex-shrink: 0; border-radius: 50%; color: white; background: #553dff; }
+.course-cover-0 { background: linear-gradient(180deg,#553dff,#51cbe9); }.course-cover-2 { background: #8973ff; }
+.course-cover svg { width: 9cqw; height: 9cqw; }
+.course-copy { flex: 1; min-width: 0; }
+.course-copy h2 { margin: 0 0 2.3cqw; font-size: 4.3cqw; font-weight: 400; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.course-copy p { display: flex; align-items: center; margin: 0; gap: 4cqw; font-size: 4cqw; white-space: nowrap; }
+.course-count { color: #553dff; flex-shrink: 0; }.course-artists { padding-left: 4cqw; border-left: 1px solid #d9d9d9; color: #d9d9d9; overflow: hidden; text-overflow: ellipsis; }
+.course-menu { border: 0; padding: 0; min-width: 32px; min-height: 44px; background: none; color: #d9d9d9; font-size: 8cqw; line-height: 1; }
+.course-empty { text-align: center; padding: 6cqw; font-size: 4cqw; color: #999; }

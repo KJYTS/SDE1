@@ -296,3 +296,6 @@ a.payment-button { display: flex; justify-content: center; align-items: center; 
   .play-row { gap: 3cqw; margin-inline: 0; }
   .profile-bio { font-size: 4.2cqw; }
 }
+
+/* Decorative glimpse beyond the last artist, without adding a third card. */
+.artist-card-peek { flex: 0 0 5cqw; align-self: stretch; background: #fff; border-radius: 5.1cqw 0 0 5.1cqw; pointer-events: none; }

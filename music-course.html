@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ddd7ff">
   <title>INDIETOWN — 음악코스</title>
-  <link rel="stylesheet" href="styles.css?v=music-course-1">
+  <link rel="stylesheet" href="styles.css?v=playlist-detail-1">
   <script src="music-course.js" defer></script>
 </head>
 <body>
@@ -28,7 +28,7 @@
     <span class="course-handle" aria-hidden="true"></span>
     <div class="course-tabs" role="tablist" aria-label="플레이리스트 분류"><button type="button" role="tab" aria-selected="true" aria-controls="course-list" id="all-courses">전체 플레이 리스트</button><button type="button" role="tab" aria-selected="false" aria-controls="course-list" id="recommended-courses" tabindex="-1">추천 플레이리스트</button></div>
     <div id="course-list" role="tabpanel" aria-labelledby="all-courses">
-    <article class="course-row" data-recommended="false"><span class="course-cover course-cover-0" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 11h8v21c0 9-14 10-14 2 0-5 6-8 11-6V15h-5zm15 8h6v16c0 8-13 8-13 1 0-5 5-7 9-5V23h-2z" fill="currentColor"/><path d="m36 7 2 5 5 2-5 3-2 5-3-5-5-3 5-2z" fill="currentColor"/></svg></span><div class="course-copy"><h2>내가 만든 플레이 리스트</h2><p><span class="course-count">♫ 18곡</span><span class="course-artists">한로로, 윤마치 …</span></p></div><button class="course-menu" type="button" aria-label="내가 만든 플레이 리스트 옵션"><span aria-hidden="true">⋮</span></button></article>
+    <article class="course-row" data-recommended="false"><span class="course-cover course-cover-0" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 11h8v21c0 9-14 10-14 2 0-5 6-8 11-6V15h-5zm15 8h6v16c0 8-13 8-13 1 0-5 5-7 9-5V23h-2z" fill="currentColor"/><path d="m36 7 2 5 5 2-5 3-2 5-3-5-5-3 5-2z" fill="currentColor"/></svg></span><div class="course-copy"><h2>내가 만든 플레이 리스트</h2><p><span class="course-count">♫ 18곡</span><span class="course-artists">한로로, 윤마치 …</span></p></div><button class="course-menu" type="button" aria-label="내가 만든 플레이 리스트 옵션"><span aria-hidden="true">⋮</span></button><a class="my-playlist-link" href="my-playlist.html" aria-label="내가 만든 플레이 리스트 열기"></a></article>
     <article class="course-row" data-recommended="true"><span class="course-cover course-cover-1" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 11h8v21c0 9-14 10-14 2 0-5 6-8 11-6V15h-5zm15 8h6v16c0 8-13 8-13 1 0-5 5-7 9-5V23h-2z" fill="currentColor"/><path d="m36 7 2 5 5 2-5 3-2 5-3-5-5-3 5-2z" fill="currentColor"/></svg></span><div class="course-copy"><h2>Oh my GOood..</h2><p><span class="course-count">♫ 5곡</span><span class="course-artists">박시현, 조승우 …</span></p></div><button class="course-menu" type="button" aria-label="Oh my GOood.. 옵션"><span aria-hidden="true">⋮</span></button></article>
     <article class="course-row" data-recommended="true"><span class="course-cover course-cover-2" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 11h8v21c0 9-14 10-14 2 0-5 6-8 11-6V15h-5zm15 8h6v16c0 8-13 8-13 1 0-5 5-7 9-5V23h-2z" fill="currentColor"/><path d="m36 7 2 5 5 2-5 3-2 5-3-5-5-3 5-2z" fill="currentColor"/></svg></span><div class="course-copy"><h2>ATIV ~?</h2><p><span class="course-count">♫ 9곡</span><span class="course-artists">김서희, 박수정 …</span></p></div><button class="course-menu" type="button" aria-label="ATIV ~? 옵션"><span aria-hidden="true">⋮</span></button></article>
     <p class="course-empty" hidden>검색 결과가 없습니다.</p>
@@ -36,7 +36,7 @@
   </section>
 <div class="profile-dock">  <nav class="map-bottom" aria-label="주 메뉴">
     <a href="music-map.html"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M24 3C4 3 0 26 24 46 48 26 44 3 24 3m0 9a9 9 0 1 1 0 18 9 9 0 0 1 0-18" fill-rule="evenodd"/></svg><span>음악지도</span></a>
-    <a href="music-course.html" aria-current="page"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><rect x="4" y="3" width="40" height="41" rx="5"/><path d="M25 12h9v4h-6v13c0 9-14 10-14 2 0-5 6-8 11-6z" fill="#fbfaff"/></svg><span>음악코스</span></a>
+    <a href="music-course.html?v=playlist-detail-1" aria-current="page"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><rect x="4" y="3" width="40" height="41" rx="5"/><path d="M25 12h9v4h-6v13c0 9-14 10-14 2 0-5 6-8 11-6z" fill="#fbfaff"/></svg><span>음악코스</span></a>
     <button type="button" disabled><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M24 3a20 20 0 0 0-17 31L4 44l12-2A20 20 0 1 0 24 3"/><g fill="#fbfaff"><circle cx="15" cy="23" r="2"/><circle cx="24" cy="23" r="2"/><circle cx="33" cy="23" r="2"/></g></svg><span>커넥팅</span></button>
     <button type="button" disabled><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="17" r="7"/><path d="M10 39c1-15 27-15 28 0"/></svg><span>MY</span></button>
   </nav>

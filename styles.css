@@ -320,3 +320,30 @@ a.payment-button { display: flex; justify-content: center; align-items: center; 
 .course-count { color: #553dff; flex-shrink: 0; }.course-artists { padding-left: 4cqw; border-left: 1px solid #d9d9d9; color: #d9d9d9; overflow: hidden; text-overflow: ellipsis; }
 .course-menu { border: 0; padding: 0; min-width: 32px; min-height: 44px; background: none; color: #d9d9d9; font-size: 8cqw; line-height: 1; }
 .course-empty { text-align: center; padding: 6cqw; font-size: 4cqw; color: #999; }
+
+/* Open the user's playlist without intercepting its separate options button. */
+.course-row { position: relative; }
+.my-playlist-link { position: absolute; inset: 0; z-index: 1; }
+.course-menu { position: relative; z-index: 2; }
+
+/* Playlist overview with a glowing constellation of music points. */
+.playlist-phone .rings::after { background: repeating-radial-gradient(ellipse 95cqw 90cqw at 52% 42%, transparent 0%, #e3fcff8a 13%, #dcffff9c 19%, transparent 22%, transparent 30%); }
+.playlist-phone .map-brand { margin-bottom: 0; }
+.playlist-route { position: relative; height: 85cqw; flex: 0 0 85cqw; }
+.playlist-route > svg { display: block; position: absolute; top: 3cqw; left: 0; width: 100%; height: 81.36cqw; overflow: visible; }
+.route-line, .route-halo { stroke: #fff; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.route-halo { stroke: #8973ff; stroke-width: 9; filter: url(#route-glow); }
+.playlist-route .music-orb { position: absolute; }
+.route-note-one { left: 15.5%; top: 31.5cqw; }.route-note-two { left: 31.3%; top: 42.7cqw; }.route-note-three { left: 78%; top: 55cqw; }
+.playlist-detail-sheet { position: relative; flex: 1; min-height: max(78cqw, calc(var(--available-height) - 104cqw)); padding: 15cqw 4.6% max(32cqw,150px); border-radius: 5.1cqw 5.1cqw 0 0; background: #f9f9f9; box-shadow: 0 -3cqw 5cqw #30295730; }
+.playlist-emblem { position: absolute; top: -10.75cqw; left: 50%; transform: translateX(-50%); display: grid; place-items: center; width: 21.5cqw; height: 21.5cqw; border-radius: 50%; color: white; }
+.playlist-emblem svg { width: 12cqw; height: 12cqw; }
+.playlist-title-row { display: flex; justify-content: center; align-items: center; gap: 1.5cqw; }
+.playlist-title-row h1 { font-size: 5.9cqw; line-height: 1.3; letter-spacing: -.22cqw; font-weight: 750; }
+.playlist-edit { display: flex; padding: 0; border: 0; background: none; color: #d9d9d9; cursor: default; }
+.playlist-edit svg { width: 4.3cqw; height: 4.3cqw; fill: currentColor; stroke: #f9f9f9; stroke-width: 1; }
+.playlist-summary { display: flex; justify-content: center; align-items: center; gap: 4cqw; margin: 5cqw 0 6.2cqw; font-size: 4.3cqw; white-space: nowrap; }
+.playlist-summary .course-artists { max-width: 43cqw; text-overflow: ellipsis; }
+.playlist-actions { display: flex; gap: 3.2cqw; }
+.playlist-actions button { flex: 1; display: flex; justify-content: center; align-items: center; gap: 2.3cqw; min-height: 44px; height: 13.6cqw; border: 0; border-radius: 2.6cqw; color: white; background: #8973ff; font-size: 4.2cqw; }
+.playlist-actions svg { width: 4cqw; height: 4cqw; fill: currentColor; }

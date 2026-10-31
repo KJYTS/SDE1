@@ -1,10 +1,11 @@
 * { box-sizing: border-box; }
 :root { font-family: Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; color: #292929; background: #f6f5fc; }
-body { margin: 0; min-height: 100svh; display: grid; place-items: center; }
-.phone { width: min(100%, 590px); aspect-ratio: 590 / 1278; position: relative; overflow: hidden; isolation: isolate; container-type: inline-size; background: #fff; }
+body { margin: 0; min-height: 100svh; display: grid; justify-items: center; align-items: start; --available-height: 100svh; }
+.phone { width: min(100%, 460px); min-height: var(--available-height); position: relative; overflow: hidden; isolation: isolate; container-type: inline-size; background: #fff; }
+.home-phone { min-height: max(var(--available-height), min(190vw, 874px)); }
 .rings { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #d8cfff 0%, #eeebff 39%, #fff 84%); }
 .rings::after { content: ''; position: absolute; inset: 0; background: repeating-radial-gradient(ellipse 73% 38% at 51% 41%, transparent 0%, #e3fcff8a 13%, #dcffff9c 19%, transparent 22%, transparent 30%); filter: blur(3px); }
-.status { position: absolute; top: 2.25%; left: 11.4%; right: 6.2%; display: flex; justify-content: space-between; align-items: center; color: #000; font-size: 4.4cqw; font-weight: 600; line-height: 1; }
+.status { position: absolute; top: max(5cqw, env(safe-area-inset-top)); left: 11.4%; right: 6.2%; display: flex; justify-content: space-between; align-items: center; color: #000; font-size: 4.4cqw; font-weight: 600; line-height: 1; }
 .status svg { width: 20cqw; height: auto; }
 .heading { position: absolute; top: 21.15%; width: 100%; text-align: center; }
 h1 { margin: 0; font-size: 6.1cqw; font-weight: 700; line-height: 1.3; letter-spacing: -.14cqw; }
@@ -20,7 +21,7 @@ button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparen
 .new-user { padding: 0; border: 0; background: transparent; white-space: nowrap; color: #d9d9d9; font-size: 5.25cqw; line-height: 1.3; }
 button:focus-visible { outline: 3px solid #1c887f; outline-offset: 5px; }
 .actions > .start-button:active { background: #4830e8; }
-.home-indicator { position: absolute; bottom: 1.85%; left: 31.3%; width: 36.8%; height: .62%; border-radius: 999px; background: #000; }
+.home-indicator { position: absolute; bottom: max(3cqw, env(safe-area-inset-bottom)); left: 31.3%; width: 36.8%; height: 1.3cqw; border-radius: 999px; background: #000; }
 dialog { width: min(85%, 360px); border: 0; border-radius: 24px; padding: 28px; text-align: center; color: #292929; }
 dialog::backdrop { background: #30265a66; }
 dialog h2 { color: #553dff; }
@@ -30,7 +31,7 @@ dialog button { border: 0; border-radius: 20px; padding: 10px 24px; background: 
 /* Role introduction screen, recreated from the supplied image. */
 a.new-user { text-decoration: none; }
 a:focus-visible { outline: 3px solid #1c887f; outline-offset: 5px; }
-.join-panel { position: absolute; top: 9.55%; left: 4.9%; width: 90.2%; bottom: 0; padding: 12.2cqw 6.3cqw 0; border-radius: 5.1cqw 5.1cqw 0 0; background: #fbfaff; }
+.join-panel { position: relative; width: 90.2%; margin: 20.68cqw auto 0; min-height: calc(var(--available-height) - 20.68cqw); padding: 12.2cqw 6.3cqw max(18cqw, env(safe-area-inset-bottom)); border-radius: 5.1cqw 5.1cqw 0 0; background: #fbfaff; }
 .join-panel h1 { text-align: center; color: #553dff; font-size: 8.5cqw; line-height: 1.15; font-weight: 800; letter-spacing: -.15cqw; }
 .join-question { margin: 3.2cqw -2cqw 7.4cqw; text-align: center; font-size: 5.1cqw; font-weight: 600; line-height: 1.3; letter-spacing: -.13cqw; white-space: nowrap; }
 .role-list { display: flex; flex-direction: column; gap: 4.55cqw; }
@@ -49,11 +50,11 @@ a:focus-visible { outline: 3px solid #1c887f; outline-offset: 5px; }
 
 /* Listener / Buyer music preference screens. */
 a.role-card { display: block; text-decoration: none; }
-.preferences-panel { position: absolute; top: 9.55%; left: 4.9%; width: 90.2%; bottom: 0; border-radius: 5.1cqw 5.1cqw 0 0; background: #fbfaff; padding-top: 12.2cqw; }
+.preferences-panel { position: relative; width: 90.2%; margin: 20.68cqw auto 0; min-height: calc(var(--available-height) - 20.68cqw); padding-bottom: max(18cqw, env(safe-area-inset-bottom)); border-radius: 5.1cqw 5.1cqw 0 0; background: #fbfaff; padding-top: 12.2cqw; }
 .preferences-panel h1 { color: #553dff; text-align: center; font-size: 8.5cqw; line-height: 1.15; font-weight: 750; letter-spacing: -.12cqw; }
 .preferences-question { text-align: center; font-size: 5.1cqw; font-weight: 600; line-height: 1.3; letter-spacing: -.15cqw; margin: 3.3cqw 0 9.4cqw; }
 .keywords { display: flex; flex-direction: column; gap: 5.6cqw; padding: 0 3.5cqw; }
-.keyword-row { display: flex; align-items: center; justify-content: space-around; gap: 2cqw; }
+.keyword-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: 2cqw; }
 .keyword { flex: 0 0 auto; height: 14.7cqw; padding: 0 4.8cqw; border: .255cqw solid #9380ff; border-radius: 999px; color: #9380ff; background: transparent; font-size: 4.3cqw; line-height: 1; white-space: nowrap; }
 .keyword[aria-pressed="true"] { color: #fff; background: #553dff; padding-inline: 2.3cqw; }
 .keyword-row:last-child { justify-content: center; gap: 6.6cqw; }
@@ -68,7 +69,7 @@ a.role-card { display: block; text-decoration: none; }
 .preferences-next:not(:disabled) { background: #553dff; }
 
 /* Buyer professional plan. */
-.plan-panel { position: absolute; top: 9.55%; left: 4.9%; width: 90.2%; bottom: 0; padding-top: 12.2cqw; border-radius: 5.1cqw 5.1cqw 0 0; background: #fbfaff; }
+.plan-panel { position: relative; width: 90.2%; margin: 20.68cqw auto 0; min-height: calc(var(--available-height) - 20.68cqw); padding-bottom: max(18cqw, env(safe-area-inset-bottom)); padding-top: 12.2cqw; border-radius: 5.1cqw 5.1cqw 0 0; background: #fbfaff; }
 .plan-panel h1 { color: #553dff; text-align: center; font-size: 8.5cqw; line-height: 1.15; font-weight: 750; letter-spacing: -.12cqw; }
 .plan-subtitle { text-align: center; font-size: 3.9cqw; font-weight: 600; line-height: 1.3; margin: 3.3cqw 0 9cqw; letter-spacing: -.08cqw; }
 .professional-plan { position: relative; isolation: isolate; overflow: hidden; width: 77.1cqw; height: 117.3cqw; margin: 0 auto; border-radius: 2.6cqw; background: linear-gradient(160deg, #6749ff 0%, #795aff 50%, #9980ff 100%); color: white; padding-top: 10.6cqw; }
@@ -83,3 +84,16 @@ a.role-card { display: block; text-decoration: none; }
 .plan-price::before { content: ''; position: absolute; left: -1.1cqw; top: 3.5cqw; width: 5.7cqw; height: 8.5cqw; border-left: .5cqw solid #fff; border-top: .5cqw solid #fff; transform: skewX(35deg); }
 .plan-price strong { display: block; margin: 1.4cqw 0 0 7.2cqw; font-size: 9.7cqw; line-height: 1.1; letter-spacing: -.25cqw; white-space: nowrap; }
 .payment-button { display: block; width: 70.5cqw; height: 14.25cqw; margin: 8cqw auto 0; border: 0; border-radius: 999px; background: #553dff; color: white; font-size: 4.5cqw; }
+
+/* Keep long pages in document flow, with reachable controls on short screens. */
+.start-button, .preferences-next, .payment-button { min-height: 44px; }
+.keyword { min-height: 44px; font-size: clamp(14px, 4.3cqw, 25.37px); }
+dialog { max-height: calc(100svh - 32px); overflow-y: auto; }
+@media (min-width: 768px) {
+  body { padding: 24px 0; --available-height: calc(100svh - 48px); }
+}
+@media (max-width: 359px) {
+  .join-question, .preferences-question { white-space: normal; }
+  .role-label { font-size: max(12px, 4cqw); }
+  .buyer .role-label { font-size: max(11px, 3.25cqw); }
+}
